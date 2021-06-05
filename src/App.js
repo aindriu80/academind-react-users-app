@@ -3,11 +3,7 @@ import AddUser from './components/Users/AddUser'
 
 import './mvp.css'
 function App() {
-  return (
-    <div>
-      <AddUser />
-    </div>
-  )
+  return <AddUser />
 }
 
 export default App
