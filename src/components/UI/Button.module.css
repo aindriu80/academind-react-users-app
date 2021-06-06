@@ -1,0 +1,37 @@
+.button {
+  border-radius: var(--border-radius);
+  display: inline-block;
+  font-size: medium;
+  font-weight: bold;
+  line-height: var(--line-height);
+  margin: 0.5rem 0;
+  padding: 1rem 2rem;
+}
+
+.button {
+  font-family: var(--font-family);
+}
+
+.button:hover {
+  cursor: pointer;
+  filter: brightness(var(--hover-brightness));
+}
+
+a b,
+a strong,
+.button {
+  background-color: var(--color);
+  border: 2px solid var(--color);
+  color: var(--color-bg);
+}
+.Button:disabled,
+input:disabled {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  cursor: not-allowed;
+}
+
+.button[disabled]:hover {
+  filter: none;
+}
