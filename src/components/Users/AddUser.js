@@ -5,12 +5,20 @@ import Button from '../UI/Button'
 import classes from './AddUser.module.css'
 
 const AddUser = (props) => {
-  const [enteredUsername, setEnteredUsername] = useState()
-  const [EnteredAge, setEnteredAge] = useState()
+  const [enteredUsername, setEnteredUsername] = useState('')
+  const [enteredAge, setEnteredAge] = useState('')
 
   const addUserHandler = (event) => {
     event.preventDefault()
-    console.log(enteredUsername, EnteredAge)
+    if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
+      return
+    }
+    if (+enteredAge < 1) {
+      return
+    }
+    console.log(enteredUsername, enteredAge)
+    setEnteredUsername('')
+    setEnteredAge('')
   }
 
   const usernameChangeHandler = (event) => {
@@ -24,9 +32,19 @@ const AddUser = (props) => {
     <Card className={classes.input}>
       <form onSubmit={addUserHandler}>
         <label htmlFor="username">Username</label>
-        <input id="username" type="text" onChange={usernameChangeHandler} />
+        <input
+          id="username"
+          type="text"
+          value={enteredUsername}
+          onChange={usernameChangeHandler}
+        />
         <label>Age (years)</label>
-        <input type="number" id="age" onChange={ageChangeHandler} />
+        <input
+          type="number"
+          id="age"
+          value={enteredAge}
+          onChange={ageChangeHandler}
+        />
         <Button type="submit">Submit</Button>
       </form>
     </Card>
