@@ -223,11 +223,6 @@ mark {
   padding: 0.1rem;
 }
 
-ol li,
-ul li {
-  padding: 0.2rem 0;
-}
-
 p {
   margin: 0.75rem 0;
   padding: 0;
