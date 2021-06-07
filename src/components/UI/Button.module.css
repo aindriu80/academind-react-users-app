@@ -1,3 +1,6 @@
+:root {
+  --color: #118bee;
+}
 .button {
   border-radius: var(--border-radius);
   display: inline-block;
